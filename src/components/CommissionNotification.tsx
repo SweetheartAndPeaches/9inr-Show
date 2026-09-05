@@ -69,7 +69,7 @@ export default function CommissionNotification() {
             <span className="notification-city">📍 {notification.city}</span>
           </div>
           <div className="notification-amount">
-            รับค่าคอมมิชชั่น: <span className="amount-value">₹{notification.amount}</span>
+            รับค่าคอมมิชชั่น: <span className="amount-value">฿{notification.amount}</span>
           </div>
         </div>
         <div className="notification-time">ตอนนี้</div>

@@ -21,8 +21,8 @@ export default function Home() {
   const [dailyTask, setDailyTask] = useState(100);
   const [inviteMultiplier, setInviteMultiplier] = useState(10);
   const [networkCount, setNetworkCount] = useState('1,110 คน');
-  const [dailyIncome, setDailyIncome] = useState('₹360');
-  const [monthlyIncome, setMonthlyIncome] = useState('₹10,800');
+  const [dailyIncome, setDailyIncome] = useState('฿360');
+  const [monthlyIncome, setMonthlyIncome] = useState('฿10,800');
 
   // Download tracking
   const [lastDownloadTime, setLastDownloadTime] = useState(0);
@@ -82,8 +82,8 @@ export default function Home() {
     );
     
     setNetworkCount(`${total.toLocaleString()} คน`);
-    setDailyIncome(`₹${daily.toLocaleString()}`);
-    setMonthlyIncome(`₹${(daily * 30).toLocaleString()}`);
+    setDailyIncome(`฿${daily.toLocaleString()}`);
+    setMonthlyIncome(`฿${(daily * 30).toLocaleString()}`);
   };
 
   return (
@@ -165,7 +165,7 @@ export default function Home() {
                   </div>
                   <div className="w-px h-10 bg-white/10"></div>
                   <div className="text-center">
-                    <div className="text-3xl font-black text-yellow-400">₹50K+</div>
+                    <div className="text-3xl font-black text-yellow-400">฿50K+</div>
                     <div className="text-gray-500 text-sm">ค่าคอมมิชชั่นรายวัน</div>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function Home() {
                   
                   {/* Floating Badges */}
                   <div className="absolute -right-4 top-1/4 bg-green-500 text-white text-sm font-bold py-2 px-4 rounded-full shadow-lg" style={{ animation: 'float 2s ease-in-out infinite 0.5s' }}>
-                    +₹1000 ค่าคอมมิชชั่นวันนี้
+                    +฿1000 ค่าคอมมิชชั่นวันนี้
                   </div>
                   <div className="absolute -left-4 bottom-1/4 bg-yellow-500 text-black text-sm font-bold py-2 px-4 rounded-full shadow-lg" style={{ animation: 'float 2s ease-in-out infinite 1s' }}>
                     ค่าคอมมิชชั่น
@@ -230,8 +230,8 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ₹1000</div>
-                    <div className="text-yellow-400 font-bold text-lg">รับสูงสุด ₹20</div>
+                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ฿1000</div>
+                    <div className="text-yellow-400 font-bold text-lg">รับสูงสุด ฿20</div>
                   </div>
                 </div>
               </div>
@@ -256,8 +256,8 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ₹1000</div>
-                    <div className="text-green-400 font-bold text-lg">รับสูงสุด ₹17</div>
+                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ฿1000</div>
+                    <div className="text-green-400 font-bold text-lg">รับสูงสุด ฿17</div>
                   </div>
                 </div>
               </div>
@@ -282,8 +282,8 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ₹1000</div>
-                    <div className="text-blue-400 font-bold text-lg">รับ ₹14</div>
+                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ฿1000</div>
+                    <div className="text-blue-400 font-bold text-lg">รับ ฿14</div>
                   </div>
                 </div>
               </div>
@@ -299,9 +299,9 @@ export default function Home() {
                   <h4 className="text-white font-bold mb-2">ตัวอย่างรายได้</h4>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     คุณเชิญ <span className="text-yellow-400 font-bold">A</span>, A เชิญ <span className="text-green-400 font-bold">B</span>, B เชิญ <span className="text-blue-400 font-bold">C</span><br/>
-                    • A ทำภารกิจชำระเงิน ₹1000 → คุณได้รับ <span className="text-yellow-400 font-bold">₹20</span><br/>
-                    • B ทำภารกิจชำระเงิน ₹1000 → คุณได้รับ <span className="text-green-400 font-bold">₹17</span><br/>
-                    • C ทำภารกิจชำระเงิน ₹1000 → คุณได้รับ <span className="text-blue-400 font-bold">₹14</span><br/>
+                    • A ทำภารกิจชำระเงิน ฿1000 → คุณได้รับ <span className="text-yellow-400 font-bold">฿20</span><br/>
+                    • B ทำภารกิจชำระเงิน ฿1000 → คุณได้รับ <span className="text-green-400 font-bold">฿17</span><br/>
+                    • C ทำภารกิจชำระเงิน ฿1000 → คุณได้รับ <span className="text-blue-400 font-bold">฿14</span><br/>
                     <span className="text-white font-medium">สามารถถอนค่าคอมมิชชั่นได้เฉพาะระดับที่ 1 เท่านั้น!</span>
                   </p>
                 </div>
@@ -365,7 +365,7 @@ export default function Home() {
                 <div className="mt-6 pt-6 border-t border-white/10">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400">รายได้โดยประมาณ</span>
-                    <span className="text-green-400 font-bold text-xl">₹50~200 ต่อภารกิจ</span>
+                    <span className="text-green-400 font-bold text-xl">฿50~200 ต่อภารกิจ</span>
                   </div>
                 </div>
               </div>
@@ -442,7 +442,7 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">จำนวนภารกิจต่อวัน (₹)</label>
+                  <label className="block text-gray-400 text-sm mb-2">จำนวนภารกิจต่อวัน (฿)</label>
                   <input 
                     type="number" 
                     value={dailyTask}
@@ -529,7 +529,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Pune</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-yellow-400 font-bold text-lg">₹6,836</span>
+                  <span className="text-yellow-400 font-bold text-lg">฿6,836</span>
                 </div>
               </div>
               
@@ -546,7 +546,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Bangalore</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-gray-300 font-bold text-lg">₹6,729</span>
+                  <span className="text-gray-300 font-bold text-lg">฿6,729</span>
                 </div>
               </div>
               
@@ -563,7 +563,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Mumbai</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-orange-400 font-bold text-lg">₹4,425</span>
+                  <span className="text-orange-400 font-bold text-lg">฿4,425</span>
                 </div>
               </div>
               
@@ -580,7 +580,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Chennai</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-white font-bold">₹4,072</span>
+                  <span className="text-white font-bold">฿4,072</span>
                 </div>
               </div>
               
@@ -597,7 +597,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Delhi</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-white font-bold">₹3,951</span>
+                  <span className="text-white font-bold">฿3,951</span>
                 </div>
               </div>
               
@@ -614,7 +614,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Jaipur</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-white font-bold">₹3,883</span>
+                  <span className="text-white font-bold">฿3,883</span>
                 </div>
               </div>
               
@@ -631,7 +631,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Hyderabad</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-white font-bold">₹3,165</span>
+                  <span className="text-white font-bold">฿3,165</span>
                 </div>
               </div>
               
@@ -648,7 +648,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-3 text-right text-gray-400 text-sm hidden sm:block">Kolkata</div>
                 <div className="col-span-6 sm:col-span-3 text-right">
-                  <span className="text-white font-bold">₹3,165</span>
+                  <span className="text-white font-bold">฿3,165</span>
                 </div>
               </div>
             </div>
