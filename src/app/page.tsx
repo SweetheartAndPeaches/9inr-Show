@@ -20,7 +20,7 @@ export default function Home() {
   const [level1Count, setLevel1Count] = useState(10);
   const [dailyTask, setDailyTask] = useState(100);
   const [inviteMultiplier, setInviteMultiplier] = useState(10);
-  const [networkCount, setNetworkCount] = useState('1,110 लोग');
+  const [networkCount, setNetworkCount] = useState('1,110 คน');
   const [dailyIncome, setDailyIncome] = useState('₹360');
   const [monthlyIncome, setMonthlyIncome] = useState('₹10,800');
 
@@ -39,12 +39,12 @@ export default function Home() {
     
     if (now - lastDownloadTime < DOWNLOAD_COOLDOWN) {
       const remainingSeconds = Math.ceil((DOWNLOAD_COOLDOWN - (now - lastDownloadTime)) / 1000);
-      return { allowed: false, message: `कृपया ${remainingSeconds} सेकंड प्रतीक्षा करें` };
+      return { allowed: false, message: `กรุณารอ ${remainingSeconds} วินาที` };
     }
     
     if (downloadCount >= DOWNLOAD_LIMIT) {
       const resetMinutes = Math.ceil((downloadCountResetTime - now) / 60000);
-      return { allowed: false, message: `प्रति घंटे अधिकतम ${DOWNLOAD_LIMIT} बार डाउनलोड कर सकते हैं, ${resetMinutes} मिनट बाद पुनः प्रयास करें` };
+      return { allowed: false, message: `ดาวน์โหลดได้สูงสุด ${DOWNLOAD_LIMIT} ครั้งต่อชั่วโมง กรุณาลองใหม่ใน ${resetMinutes} นาที` };
     }
     
     return { allowed: true, message: '' };
@@ -77,7 +77,7 @@ export default function Home() {
       level3Count * dailyTask * 0.014
     );
     
-    setNetworkCount(`${total.toLocaleString()} लोग`);
+    setNetworkCount(`${total.toLocaleString()} คน`);
     setDailyIncome(`₹${daily.toLocaleString()}`);
     setMonthlyIncome(`₹${(daily * 30).toLocaleString()}`);
   };
@@ -97,20 +97,20 @@ export default function Home() {
                 src="/app-icon.png"
                 className="w-10 h-10 rounded-xl object-cover"
               />
-              <span className="text-white font-bold text-xl">9INR</span>
-              <span className="hidden sm:inline-block bg-yellow-400/20 text-yellow-400 text-xs px-2 py-1 rounded-full">टास्क प्लेटफॉर्म</span>
+              <span className="text-white font-bold text-xl">Goodpay</span>
+              <span className="hidden sm:inline-block bg-yellow-400/20 text-yellow-400 text-xs px-2 py-1 rounded-full">แพลตฟอร์มภารกิจ</span>
             </div>
             <div className="flex items-center gap-4">
               <nav className="hidden md:flex items-center gap-6">
-                <a href="#commission" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">कमीशन</a>
-                <a href="#tasks" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">टास्क सिस्टम</a>
-                <a href="#calculator" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">कमाई कैलकुलेटर</a>
+                <a href="#commission" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">ค่าคอมมิชชั่น</a>
+                <a href="#tasks" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">ระบบภารกิจ</a>
+                <a href="#calculator" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">เครื่องคำนวณรายได้</a>
               </nav>
               <button 
                 onClick={handleDownload}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-2 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm"
               >
-                अभी डाउनलोड करें
+                ดาวน์โหลดเลย
               </button>
             </div>
           </div>
@@ -124,16 +124,16 @@ export default function Home() {
               <div className="flex-1 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-2 mb-6">
                   <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
-                  <span className="text-yellow-400 text-sm font-medium">वितरण · पासिव इनकम</span>
+                  <span className="text-yellow-400 text-sm font-medium">กระจาย · รายได้พาสซีฟ</span>
                 </div>
                 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                  दोस्तों को आमंत्रित करें<br/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">कमीशन कमाएं</span>
+                  เชิญเพื่อน<br/>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">รับค่าคอมมิชชั่น</span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl">
-                  टास्क पूरा करके पैसे कमाएं, दोस्तों को आमंत्रित करके कमीशन कमाएं! वितरण प्रणाली से आपके दोस्तों के टास्क से भी आपको मिलेगा!
+                  ทำภารกิจรับเงิน เชิญเพื่อนรับค่าคอมมิชชั่น! ระบบกระจายรายได้ให้คุณได้รับจากภารกิจของเพื่อนด้วย!
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -144,7 +144,7 @@ export default function Home() {
                     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17.523 15.341c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9m-11.046 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9m11.4-6.02l1.97-3.41a.41.41 0 00-.71-.41l-2 3.46c-1.54-.7-3.26-1.09-5.14-1.09s-3.6.39-5.14 1.09l-2-3.46a.41.41 0 00-.71.41l1.97 3.41C2.69 11.08.34 14.53 0 18.5h24c-.34-3.97-2.69-7.42-6.12-9.18"/>
                     </svg>
-                    <span>ऐप डाउनलोड करें और कमाई शुरू करें</span>
+                    <span>ดาวน์โหลดแอปและเริ่มสร้างรายได้</span>
                   </button>
                 </div>
                 
@@ -152,17 +152,17 @@ export default function Home() {
                 <div className="flex items-center gap-8 mt-12 justify-center lg:justify-start">
                   <div className="text-center">
                     <div className="text-3xl font-black text-yellow-400">10M+</div>
-                    <div className="text-gray-500 text-sm">डाउनलोड</div>
+                    <div className="text-gray-500 text-sm">ดาวน์โหลด</div>
                   </div>
                   <div className="w-px h-10 bg-white/10"></div>
                   <div className="text-center">
                     <div className="text-3xl font-black text-yellow-400">4.8</div>
-                    <div className="text-gray-500 text-sm">रेटिंग</div>
+                    <div className="text-gray-500 text-sm">คะแนน</div>
                   </div>
                   <div className="w-px h-10 bg-white/10"></div>
                   <div className="text-center">
                     <div className="text-3xl font-black text-yellow-400">₹50K+</div>
-                    <div className="text-gray-500 text-sm">दैनिक कमीशन</div>
+                    <div className="text-gray-500 text-sm">ค่าคอมมิชชั่นรายวัน</div>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function Home() {
                   <div className="w-64 h-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10" style={{ animation: 'float 3s ease-in-out infinite' }}>
                     <img 
                       src="/app-icon.png"
-                      alt="9INR App"
+                      alt="Goodpay App"
                       className="w-full h-auto"
                     />
                   </div>
@@ -181,10 +181,10 @@ export default function Home() {
                   
                   {/* Floating Badges */}
                   <div className="absolute -right-4 top-1/4 bg-green-500 text-white text-sm font-bold py-2 px-4 rounded-full shadow-lg" style={{ animation: 'float 2s ease-in-out infinite 0.5s' }}>
-                    +₹1000 आज का कमीशन
+                    +₹1000 ค่าคอมมิชชั่นวันนี้
                   </div>
                   <div className="absolute -left-4 bottom-1/4 bg-yellow-500 text-black text-sm font-bold py-2 px-4 rounded-full shadow-lg" style={{ animation: 'float 2s ease-in-out infinite 1s' }}>
-                    कमीशन
+                    ค่าคอมมิชชั่น
                   </div>
                 </div>
               </div>
@@ -197,10 +197,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                <span className="text-yellow-400">कमीशन प्रणाली</span>
+                <span className="text-yellow-400">ระบบค่าคอมมิชชั่น</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                दोस्तों को आमंत्रित करें और तीन स्तरों तक कमीशन कमाएं। आपका नेटवर्क जितना सक्रिय, उतना अधिक पासिव इनकम!
+                เชิญเพื่อนและรับค่าคอมมิชชั่นถึง 3 ระดับ ยิ่งเครือข่ายของคุณใช้งานมาก รายได้พาสซีฟยิ่งมาก!
               </p>
             </div>
             
@@ -215,19 +215,19 @@ export default function Home() {
                       <img src="/avatar-level1.jpeg" alt="Level 1" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <div className="text-white font-bold">पहला स्तर</div>
-                      <div className="text-gray-400 text-sm">सीधे रेफरल</div>
+                      <div className="text-white font-bold">ระดับที่ 1</div>
+                      <div className="text-gray-400 text-sm">เชิญโดยตรง</div>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">भुगतान कमीशन</span>
+                      <span className="text-gray-300">ค่าคอมมิชชั่นการชำระเงิน</span>
                       <span className="text-yellow-400 font-black text-2xl">1.8%+0.2%</span>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="text-sm text-gray-400">उदाहरण: ₹1000 भुगतान टास्क पर</div>
-                    <div className="text-yellow-400 font-bold text-lg">₹20 तक कमाएं</div>
+                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ₹1000</div>
+                    <div className="text-yellow-400 font-bold text-lg">รับสูงสุด ₹20</div>
                   </div>
                 </div>
               </div>
@@ -241,19 +241,19 @@ export default function Home() {
                       <img src="/avatar-level2.jpeg" alt="Level 2" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <div className="text-white font-bold">दूसरा स्तर</div>
-                      <div className="text-gray-400 text-sm">अप्रत्यक्ष रेफरल</div>
+                      <div className="text-white font-bold">ระดับที่ 2</div>
+                      <div className="text-gray-400 text-sm">เชิญทางอ้อม</div>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">भुगतान कमीशन</span>
+                      <span className="text-gray-300">ค่าคอมมิชชั่นการชำระเงิน</span>
                       <span className="text-green-400 font-black text-2xl">1.6%+0.1%</span>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="text-sm text-gray-400">उदाहरण: ₹1000 भुगतान टास्क पर</div>
-                    <div className="text-green-400 font-bold text-lg">₹17 तक कमाएं</div>
+                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ₹1000</div>
+                    <div className="text-green-400 font-bold text-lg">รับสูงสุด ₹17</div>
                   </div>
                 </div>
               </div>
@@ -267,19 +267,19 @@ export default function Home() {
                       <img src="/avatar-level3.jpeg" alt="Level 3" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <div className="text-white font-bold">तीसरा स्तर</div>
-                      <div className="text-gray-400 text-sm">दूर का रेफरल</div>
+                      <div className="text-white font-bold">ระดับที่ 3</div>
+                      <div className="text-gray-400 text-sm">เชิญทางไกล</div>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">भुगतान कमीशन</span>
+                      <span className="text-gray-300">ค่าคอมมิชชั่นการชำระเงิน</span>
                       <span className="text-blue-400 font-black text-2xl">1.4%</span>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <div className="text-sm text-gray-400">उदाहरण: ₹1000 भुगतान टास्क पर</div>
-                    <div className="text-blue-400 font-bold text-lg">₹14 कमाएं</div>
+                    <div className="text-sm text-gray-400">ตัวอย่าง: ภารกิจชำระเงิน ₹1000</div>
+                    <div className="text-blue-400 font-bold text-lg">รับ ₹14</div>
                   </div>
                 </div>
               </div>
@@ -292,13 +292,13 @@ export default function Home() {
                   <span className="text-2xl">💡</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-2">कमाई का उदाहरण</h4>
+                  <h4 className="text-white font-bold mb-2">ตัวอย่างรายได้</h4>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    आपने <span className="text-yellow-400 font-bold">A</span> को आमंत्रित किया, A ने <span className="text-green-400 font-bold">B</span> को, B ने <span className="text-blue-400 font-bold">C</span> को<br/>
-                    • A ने ₹1000 का भुगतान टास्क किया → आपको <span className="text-yellow-400 font-bold">₹20</span><br/>
-                    • B ने ₹1000 का भुगतान टास्क किया → आपको <span className="text-green-400 font-bold">₹17</span><br/>
-                    • C ने ₹1000 का भुगतान टास्क किया → आपको <span className="text-blue-400 font-bold">₹14</span><br/>
-                    <span className="text-white font-medium">केवल पहले स्तर का कमीशन निकाला जा सकता है!</span>
+                    คุณเชิญ <span className="text-yellow-400 font-bold">A</span>, A เชิญ <span className="text-green-400 font-bold">B</span>, B เชิญ <span className="text-blue-400 font-bold">C</span><br/>
+                    • A ทำภารกิจชำระเงิน ₹1000 → คุณได้รับ <span className="text-yellow-400 font-bold">₹20</span><br/>
+                    • B ทำภารกิจชำระเงิน ₹1000 → คุณได้รับ <span className="text-green-400 font-bold">₹17</span><br/>
+                    • C ทำภารกิจชำระเงิน ₹1000 → คุณได้รับ <span className="text-blue-400 font-bold">₹14</span><br/>
+                    <span className="text-white font-medium">สามารถถอนค่าคอมมิชชั่นได้เฉพาะระดับที่ 1 เท่านั้น!</span>
                   </p>
                 </div>
               </div>
@@ -311,10 +311,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                दोहरी टास्क <span className="text-yellow-400">आसान कमाई</span>
+                ภารกิจสองแบบ <span className="text-yellow-400">สร้างรายได้อย่างง่ายดาย</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                सरल टास्क, 30 मिनट में पूरा। प्राप्ति और भुगतान दोनों विकल्प, लचीली कमाई!
+                ภารกิจง่ายๆ เสร็จใน 30 นาที ทั้งรับเงินและชำระเงิน สร้างรายได้อย่างยืดหยุ่น!
               </p>
             </div>
             
@@ -328,8 +328,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white">प्राप्ति टास्क</h3>
-                    <p className="text-green-400">पैसे प्राप्त करें और पुष्टि करें</p>
+                    <h3 className="text-2xl font-bold text-white">ภารกิจรับเงิน</h3>
+                    <p className="text-green-400">รับเงินและยืนยัน</p>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -339,7 +339,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">निर्दिष्ट खाते में पैसे प्राप्त करें</span>
+                    <span className="text-gray-300">รับเงินเข้าบัญชีที่กำหนด</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -347,7 +347,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">प्राप्ति की पुष्टि करें और स्क्रीनशॉट अपलोड करें</span>
+                    <span className="text-gray-300">ยืนยันการรับเงินและอัปโหลดภาพหน้าจอ</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -355,13 +355,13 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">टास्क रिवार्ड प्राप्त करें (कोई कमीशन नहीं)</span>
+                    <span className="text-gray-300">รับรางวัลภารกิจ (ไม่มีค่าคอมมิชชั่น)</span>
                   </div>
                 </div>
                 <div className="mt-6 pt-6 border-t border-white/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">अनुमानित कमाई</span>
-                    <span className="text-green-400 font-bold text-xl">प्रति टास्क ₹50~200</span>
+                    <span className="text-gray-400">รายได้โดยประมาณ</span>
+                    <span className="text-green-400 font-bold text-xl">₹50~200 ต่อภารกิจ</span>
                   </div>
                 </div>
               </div>
@@ -375,8 +375,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white">भुगतान टास्क</h3>
-                    <p className="text-blue-400">निर्दिष्ट खाते में भुगतान करें</p>
+                    <h3 className="text-2xl font-bold text-white">ภารกิจชำระเงิน</h3>
+                    <p className="text-blue-400">ชำระเงินเข้าบัญชีที่กำหนด</p>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -386,7 +386,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">निर्दिष्ट खाते में भुगतान करें</span>
+                    <span className="text-gray-300">ชำระเงินเข้าบัญชีที่กำหนด</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center">
@@ -394,7 +394,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">भुगतान स्क्रीनशॉट अपलोड करें</span>
+                    <span className="text-gray-300">อัปโหลดภาพหน้าจอการชำระเงิน</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center">
@@ -402,13 +402,13 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">टास्क रिवार्ड + कमीशन प्राप्त करें</span>
+                    <span className="text-gray-300">รับรางวัลภารกิจ + ค่าคอมมิชชั่น</span>
                   </div>
                 </div>
                 <div className="mt-6 pt-6 border-t border-white/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">अनुमानित कमाई</span>
-                    <span className="text-blue-400 font-bold text-xl">प्रति टास्क +1.4%~2.0%</span>
+                    <span className="text-gray-400">รายได้โดยประมาณ</span>
+                    <span className="text-blue-400 font-bold text-xl">+1.4%~2.0% ต่อภารกิจ</span>
                   </div>
                 </div>
               </div>
@@ -421,15 +421,15 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                कमाई <span className="text-yellow-400">कैलकुलेटर</span>
+                เครื่องคำนวณ <span className="text-yellow-400">รายได้</span>
               </h2>
-              <p className="text-gray-400">देखें आपका नेटवर्क कितना पासिव इनकम ला सकता है</p>
+              <p className="text-gray-400">ดูว่าเครือข่ายของคุณสามารถสร้างรายได้พาสซีฟได้เท่าไหร่</p>
             </div>
             
             <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">पहले स्तर के एजेंट</label>
+                  <label className="block text-gray-400 text-sm mb-2">ตัวแทนระดับที่ 1</label>
                   <input 
                     type="number" 
                     value={level1Count}
@@ -438,7 +438,7 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">प्रति दिन टास्क राशि (₹)</label>
+                  <label className="block text-gray-400 text-sm mb-2">จำนวนภารกิจต่อวัน (₹)</label>
                   <input 
                     type="number" 
                     value={dailyTask}
@@ -447,7 +447,7 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">आमंत्रण गुणक</label>
+                  <label className="block text-gray-400 text-sm mb-2">ตัวคูณการเชิญ</label>
                   <input 
                     type="number" 
                     value={inviteMultiplier}
@@ -461,25 +461,25 @@ export default function Home() {
                 onClick={calculateEarnings}
                 className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] mb-8"
               >
-                मेरी कमाई की गणना करें
+                คำนวณรายได้ของฉัน
               </button>
               
               {/* Results */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-yellow-400/10 rounded-xl p-4 border border-yellow-400/20">
-                  <div className="text-gray-400 text-sm mb-1">आपका नेटवर्क</div>
+                  <div className="text-gray-400 text-sm mb-1">เครือข่ายของคุณ</div>
                   <div className="text-yellow-400 font-black text-3xl">{networkCount}</div>
                   <div className="text-gray-500 text-xs">10 + 100 + 1000</div>
                 </div>
                 <div className="bg-green-400/10 rounded-xl p-4 border border-green-400/20">
-                  <div className="text-gray-400 text-sm mb-1">दैनिक कमीशन</div>
+                  <div className="text-gray-400 text-sm mb-1">ค่าคอมมิชชั่นรายวัน</div>
                   <div className="text-green-400 font-black text-3xl">{dailyIncome}</div>
-                  <div className="text-gray-500 text-xs">पासिव इनकम</div>
+                  <div className="text-gray-500 text-xs">รายได้พาสซีฟ</div>
                 </div>
                 <div className="bg-blue-400/10 rounded-xl p-4 border border-blue-400/20 col-span-1 sm:col-span-2">
-                  <div className="text-gray-400 text-sm mb-1">मासिक कमीशन</div>
+                  <div className="text-gray-400 text-sm mb-1">ค่าคอมมิชชั่นรายเดือน</div>
                   <div className="text-blue-400 font-black text-3xl">{monthlyIncome}</div>
-                  <div className="text-gray-500 text-xs">बिना कुछ किए हर महीने कमाएं!</div>
+                  <div className="text-gray-500 text-xs">สร้างรายได้ทุกเดือนโดยไม่ต้องทำอะไร!</div>
                 </div>
               </div>
             </div>
@@ -493,12 +493,12 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 mb-4">
                 <span className="text-4xl">🏆</span>
                 <h2 className="text-2xl sm:text-3xl font-black text-white">
-                  आज के टॉप कमीशन विनर्स
+                  ผู้รับค่าคอมมิชชั่นสูงสุดวันนี้
                 </h2>
               </div>
               <div className="flex items-center justify-center gap-2 text-sm text-green-400">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span>Live Updates - हर 5 मिनट में अपडेट</span>
+                <span>อัปเดตสด - อัปเดตทุก 5 นาที</span>
               </div>
             </div>
             
@@ -506,10 +506,10 @@ export default function Home() {
             <div className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden">
               {/* Header */}
               <div className="grid grid-cols-12 gap-4 px-4 sm:px-6 py-3 bg-white/5 border-b border-white/10 text-gray-400 text-sm">
-                <div className="col-span-1 text-center">रैंक</div>
-                <div className="col-span-5">यूज़र</div>
-                <div className="col-span-3 text-right hidden sm:block">शहर</div>
-                <div className="col-span-6 sm:col-span-3 text-right">आज की कमाई</div>
+                <div className="col-span-1 text-center">อันดับ</div>
+                <div className="col-span-5">ผู้ใช้</div>
+                <div className="col-span-3 text-right hidden sm:block">เมือง</div>
+                <div className="col-span-6 sm:col-span-3 text-right">รายได้วันนี้</div>
               </div>
               
               {/* Rank 1 */}
@@ -651,12 +651,12 @@ export default function Home() {
             
             {/* CTA below leaderboard */}
             <div className="text-center mt-6">
-              <p className="text-gray-400 text-sm mb-4">अपना नाम इस लिस्ट में देखना चाहते हैं?</p>
+              <p className="text-gray-400 text-sm mb-4">ต้องการเห็นชื่อของคุณในรายการนี้?</p>
               <button 
                 onClick={handleDownload}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
               >
-                <span>अभी शुरू करें</span>
+                <span>เริ่มเลย</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                 </svg>
@@ -670,16 +670,16 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-yellow-400/20 via-yellow-500/10 to-yellow-400/20 rounded-3xl p-8 sm:p-12 border border-yellow-400/30 text-center">
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                अपनी पासिव इनकम यात्रा शुरू करें
+                เริ่มการเดินทางสู่รายได้พาสซีฟของคุณ
               </h2>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                आज ही 9INR डाउनलोड करें और कमीशन प्रणाली से पासिव इनकम कमाना शुरू करें। अपने दोस्तों को आमंत्रित करें और उनकी कमाई से भी कमीशन पाएं!
+                ดาวน์โหลด Goodpay วันนี้และเริ่มสร้างรายได้พาสซีฟผ่านระบบค่าคอมมิชชั่น เชิญเพื่อนและรับค่าคอมมิชชั่นจาก รายได้ของพวกเขาด้วย!
               </p>
               <button 
                 onClick={handleDownload}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-4 px-10 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-400/20 text-lg"
               >
-                अभी डाउनलोड करें 🚀
+                ดาวน์โหลดเลย 🚀
               </button>
             </div>
           </div>
@@ -689,7 +689,7 @@ export default function Home() {
         <footer className="w-full py-8 px-4 border-t border-white/5">
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-gray-500 text-sm">
-              © 2024 9INR. All rights reserved. | भारत का सबसे भरोसेमंद टास्क प्लेटफॉर्म
+              © 2024 Goodpay. All rights reserved. | แพลตฟอร์มภารกิจที่เชื่อถือได้ในประเทศไทย
             </p>
           </div>
         </footer>
@@ -711,10 +711,10 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">डाउनलोड सीमित</h3>
+              <h3 className="text-xl font-bold text-white mb-2">จำกัดการดาวน์โหลด</h3>
               <p className="text-gray-400 mb-6">{limitMessage}</p>
               <button className="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-xl transition-colors" onClick={() => setShowLimitModal(false)}>
-                बंद करें
+                ปิด
               </button>
             </div>
           </div>

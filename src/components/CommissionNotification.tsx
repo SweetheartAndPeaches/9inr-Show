@@ -2,15 +2,17 @@
 
 import { useState, useEffect } from 'react';
 
-const INDIAN_NAMES = [
-  'Priya', 'Amit', 'Neha', 'Rahul', 'Deepa', 'Vikram', 'Anjali', 'Suresh',
-  'Kavita', 'Rajesh', 'Pooja', 'Sanjay', 'Meera', 'Arjun', 'Shreya', 'Vijay',
-  'Nisha', 'Rohan', 'Divya', 'Karan', 'Anita', 'Manish', 'Ritu', 'Ashok'
+const THAI_NAMES = [
+  'Somchai', 'Somsak', 'Sompong', 'Prasit', 'Chaiwat', 'Anan', 'Kittisak', 'Nattapong',
+  'Worapot', 'Surachai', 'Apichart', 'Pichit', 'Somkid', 'Thaksin', 'Banharn', 'Chavalit',
+  'Suchinda', 'Prem', 'Krisada', 'Narong', 'Prayut', 'Prawit', 'Anupong', 'Suttirat',
+  'Pimchanok', 'Siriporn', 'Nattaya', 'Waraporn', 'Kanokwan', 'Nattawee'
 ];
 
-const INDIAN_CITIES = [
-  'Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad', 'Pune', 'Jaipur',
-  'Ahmedabad', 'Lucknow', 'Chandigarh', 'Noida', 'Gurgaon', 'Indore', 'Bhopal', 'Nagpur'
+const THAI_CITIES = [
+  'Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Khon Kaen', 'Hat Yai', 'Nakhon Ratchasima',
+  'Udon Thani', 'Chon Buri', 'Songkhla', 'Chiang Rai', 'Krabi', 'Surat Thani',
+  'Nakhon Si Thammarat', 'Lampang', 'Phitsanulok'
 ];
 
 interface Notification {
@@ -26,8 +28,8 @@ export default function CommissionNotification() {
 
   useEffect(() => {
     const showNotification = () => {
-      const name = INDIAN_NAMES[Math.floor(Math.random() * INDIAN_NAMES.length)];
-      const city = INDIAN_CITIES[Math.floor(Math.random() * INDIAN_CITIES.length)];
+      const name = THAI_NAMES[Math.floor(Math.random() * THAI_NAMES.length)];
+      const city = THAI_CITIES[Math.floor(Math.random() * THAI_CITIES.length)];
       const amount = Math.floor(Math.random() * 500 + 100);
 
       setNotification({ id: Date.now(), name, city, amount });
@@ -67,10 +69,10 @@ export default function CommissionNotification() {
             <span className="notification-city">📍 {notification.city}</span>
           </div>
           <div className="notification-amount">
-            कमीशन मिला: <span className="amount-value">₹{notification.amount}</span>
+            รับค่าคอมมิชชั่น: <span className="amount-value">₹{notification.amount}</span>
           </div>
         </div>
-        <div className="notification-time">अभी</div>
+        <div className="notification-time">ตอนนี้</div>
       </div>
     </div>
   );

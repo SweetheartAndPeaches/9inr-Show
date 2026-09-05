@@ -12,7 +12,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'नमस्ते! 🙏 मैं Raju हूं, 9INR का मार्केटिंग एक्सपर्ट।\n\nआपको किस बारे में जानकारी चाहिए? मैं आपकी भाषा में जवाब दूंगा! 😊'
+      content: 'สวัสดี! 🙏 ฉันชื่อ Somchai ผู้เชี่ยวชาญการตลาดของ Goodpay\n\nคุณต้องการข้อมูลเกี่ยวกับอะไร? ฉันจะตอบเป็นภาษาของคุณ! 😊'
     }
   ]);
   const [input, setInput] = useState('');
@@ -51,13 +51,13 @@ export default function ChatWidget() {
       if (!response.ok) throw new Error('API error');
 
       const data = await response.json();
-      const assistantMessage = data.content || 'Sorry, मुझे थोड़ी समस्या हो रही है। कृपया बाद में पुनः प्रयास करें। 🙏';
+      const assistantMessage = data.content || 'ขออภัย ฉันมีปัญหาเล็กน้อย กรุณาลองใหม่ในภายหลัง 🙏';
 
       setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
     } catch (error) {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: 'Sorry, मुझे थोड़ी समस्या हो रही है। कृपया बाद में पुनः प्रयास करें। 🙏'
+        content: 'ขออภัย ฉันมีปัญหาเล็กน้อย กรุณาลองใหม่ในภายหลัง 🙏'
       }]);
     }
 
@@ -82,9 +82,9 @@ export default function ChatWidget() {
       <div className={`chat-window ${isOpen ? 'open' : ''}`}>
         {/* Header */}
         <div className="chat-header">
-          <div className="chat-header-avatar">🇮🇳</div>
+          <div className="chat-header-avatar">🇹🇭</div>
           <div className="chat-header-info">
-            <div className="chat-header-name">Raju</div>
+            <div className="chat-header-name">Somchai</div>
             <div className="chat-header-status">
               <span className="status-dot"></span>
               Online
@@ -101,7 +101,7 @@ export default function ChatWidget() {
         <div className="chat-messages">
           {messages.map((msg, idx) => (
             <div key={idx} className={`chat-message ${msg.role}`}>
-              {msg.role === 'assistant' && <div className="message-avatar">🇮🇳</div>}
+              {msg.role === 'assistant' && <div className="message-avatar">🇹🇭</div>}
               <div className="message-content">
                 <p style={{ whiteSpace: 'pre-wrap' }}>{msg.content}</p>
               </div>
@@ -109,7 +109,7 @@ export default function ChatWidget() {
           ))}
           {isTyping && (
             <div className="chat-message assistant">
-              <div className="message-avatar">🇮🇳</div>
+              <div className="message-avatar">🇹🇭</div>
               <div className="message-content typing-dots">
                 <span></span><span></span><span></span>
               </div>
@@ -123,7 +123,7 @@ export default function ChatWidget() {
           <input
             type="text"
             className="chat-input"
-            placeholder="अपना सवाल टाइप करें..."
+            placeholder="พิมพ์คำถามของคุณ..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
