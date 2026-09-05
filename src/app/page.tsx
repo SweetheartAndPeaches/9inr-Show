@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TriangleBackground from '@/components/TriangleBackground';
 import ChatWidget from '@/components/ChatWidget';
 import CommissionNotification from '@/components/CommissionNotification';
@@ -27,7 +27,11 @@ export default function Home() {
   // Download tracking
   const [lastDownloadTime, setLastDownloadTime] = useState(0);
   const [downloadCount, setDownloadCount] = useState(0);
-  const [downloadCountResetTime, setDownloadCountResetTime] = useState(Date.now() + 60 * 60 * 1000);
+  const [downloadCountResetTime, setDownloadCountResetTime] = useState(0);
+
+  useEffect(() => {
+    setDownloadCountResetTime(Date.now() + 60 * 60 * 1000);
+  }, []);
 
   const canDownload = (): { allowed: boolean; message: string } => {
     const now = Date.now();

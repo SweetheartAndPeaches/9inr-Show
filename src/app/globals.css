@@ -8,6 +8,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: var(--font-noto-sans-thai), "Noto Sans Thai", "Sukhumvit",
+    system-ui, -apple-system, sans-serif;
   background: linear-gradient(
       to bottom,
       transparent,

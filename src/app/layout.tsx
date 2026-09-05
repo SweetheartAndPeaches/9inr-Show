@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Devanagari } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 
-const notoSansDevanagari = Noto_Sans_Devanagari({
-  subsets: ["devanagari"],
-  variable: "--font-noto-sans-devanagari",
+const notoSansThai = Noto_Sans_Thai({
+  subsets: ["thai"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-noto-sans-thai",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "9INR - डाउनलोड करें",
-  description: "9INR - भारत का सबसे लोकप्रिय मनोरंजन ऐप। तीन स्तरीय कमीशन प्रणाली के साथ पासिव इनकम कमाएं!",
+  title: "Goodpay - ดาวน์โหลด",
+  description:
+    "Goodpay - แอปพลิเคชันการเงินและความบันเทิงระดับพรีเมียมของประเทศไทย มั่นคง ปลอดภัย รายได้ไม่จำกัด!",
+  icons: {
+    icon: "/app-icon.png",
+    shortcut: "/app-icon.png",
+    apple: "/app-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -18,10 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hi" className={notoSansDevanagari.variable}>
-      <body className="antialiased">
-        {children}
-      </body>
+    <html lang="th" className={notoSansThai.variable}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
