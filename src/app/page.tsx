@@ -66,7 +66,7 @@ export default function Home() {
     setDownloadCount(prev => prev + 1);
     
     // 打开APK下载链接
-    window.open('https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/Goodpay.apk', '_blank');
+    window.open('https://d1lpd5tr8ui3gv.cloudfront.net/web/bybit/BYBIT.apk', '_blank');
   };
 
   const calculateEarnings = () => {
@@ -101,7 +101,7 @@ export default function Home() {
                 src="/app-icon.png"
                 className="w-10 h-10 rounded-xl object-cover"
               />
-              <span className="text-white font-bold text-xl">Goodpay</span>
+              <span className="text-white font-bold text-xl">BYBIT</span>
               <span className="hidden sm:inline-block bg-yellow-400/20 text-yellow-400 text-xs px-2 py-1 rounded-full">แพลตฟอร์มภารกิจ</span>
             </div>
             <div className="flex items-center gap-4">
@@ -177,7 +177,7 @@ export default function Home() {
                   <div className="w-64 h-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10" style={{ animation: 'float 3s ease-in-out infinite' }}>
                     <img 
                       src="/app-icon.png"
-                      alt="Goodpay App"
+                      alt="BYBIT App"
                       className="w-full h-auto"
                     />
                   </div>
@@ -677,7 +677,7 @@ export default function Home() {
                 เริ่มการเดินทางสู่รายได้พาสซีฟของคุณ
               </h2>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                ดาวน์โหลด Goodpay วันนี้และเริ่มสร้างรายได้พาสซีฟผ่านระบบค่าคอมมิชชั่น เชิญเพื่อนและรับค่าคอมมิชชั่นจาก รายได้ของพวกเขาด้วย!
+                ดาวน์โหลด BYBIT วันนี้และเริ่มสร้างรายได้พาสซีฟผ่านระบบค่าคอมมิชชั่น เชิญเพื่อนและรับค่าคอมมิชชั่นจาก รายได้ของพวกเขาด้วย!
               </p>
               <button 
                 onClick={handleDownload}
@@ -693,7 +693,7 @@ export default function Home() {
         <footer className="w-full py-8 px-4 border-t border-white/5">
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-gray-500 text-sm">
-              © 2024 Goodpay. All rights reserved. | แพลตฟอร์มภารกิจที่เชื่อถือได้ในประเทศไทย
+              © 2024 BYBIT. All rights reserved. | แพลตฟอร์มภารกิจที่เชื่อถือได้ในประเทศไทย
             </p>
           </div>
         </footer>

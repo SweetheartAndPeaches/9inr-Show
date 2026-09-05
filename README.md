@@ -1,4 +1,4 @@
-# Goodpay 赚钱应用
+# BYBIT 赚钱应用
 
 [中文](#中文) | [English](#english) | [ไทย](#ไทย)
 
@@ -7,7 +7,7 @@
 ## 中文
 
 ### 项目简介
-Goodpay 是一个赚钱应用，用户可以通过完成代收和代付任务赚取佣金。
+BYBIT 是一个赚钱应用，用户可以通过完成代收和代付任务赚取佣金。
 
 ### 核心功能
 - **代收任务**：完成代收任务，赚取佣金
@@ -53,7 +53,7 @@ src/
 6. 启动生产服务器：`pnpm start`
 
 ### 下载链接
-APK 下载地址：https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/9inr.apk
+APK 下载地址：https://d1lpd5tr8ui3gv.cloudfront.net/web/bybit/bybit.apk
 
 ### 环境变量
 - `NVIDIA_API_KEY`：NVIDIA API 密钥
@@ -70,7 +70,7 @@ APK 下载地址：https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/9inr.apk
 ## English
 
 ### Project Overview
-Goodpay is a money-earning app where users can earn commissions by completing collection and payment tasks.
+BYBIT is a money-earning app where users can earn commissions by completing collection and payment tasks.
 
 ### Core Features
 - **Collection Tasks**: Complete collection tasks to earn commissions
@@ -116,7 +116,7 @@ src/
 6. Start production server: `pnpm start`
 
 ### Download Link
-APK Download: https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/9inr.apk
+APK Download: https://d1lpd5tr8ui3gv.cloudfront.net/web/bybit/bybit.apk
 
 ### Environment Variables
 - `NVIDIA_API_KEY`: NVIDIA API key
@@ -133,7 +133,7 @@ APK Download: https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/9inr.apk
 ## ไทย
 
 ### ภาพรวมโปรเจกต์
-Goodpay เป็นแอปพลิเคชันสร้างรายได้ที่ผู้ใช้สามารถรับค่าคอมมิชชั่นจากการทำภารกิจรับและจ่ายเงิน
+BYBIT เป็นแอปพลิเคชันสร้างรายได้ที่ผู้ใช้สามารถรับค่าคอมมิชชั่นจากการทำภารกิจรับและจ่ายเงิน
 
 ### ฟีเจอร์หลัก
 - **ภารกิจรับเงิน**: ทำภารกิจรับเงินเพื่อรับค่าคอมมิชชั่น
@@ -179,7 +179,7 @@ src/
 6. เริ่มเซิร์ฟเวอร์การผลิต: `pnpm start`
 
 ### ลิงก์ดาวน์โหลด
-ดาวน์โหลด APK: https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/9inr.apk
+ดาวน์โหลด APK: https://d1lpd5tr8ui3gv.cloudfront.net/web/bybit/bybit.apk
 
 ### ตัวแปรสภาพแวดล้อม
 - `NVIDIA_API_KEY`: คีย์ API ของ NVIDIA

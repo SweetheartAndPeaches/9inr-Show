@@ -88,7 +88,7 @@ export async function GET(request: NextRequest) {
     const content: Content[] = [
       {
         type: 'text' as const,
-        text: '9INR app promotional video: A golden smartphone with 9INR app icon on a dark luxury background. Golden particles and coins floating around. Text "9INR - Earn Money Online" appears in glowing golden Hindi font. Smooth cinematic camera movement showing the app interface with money earning features. Professional tech advertisement style, elegant and premium feel.',
+        text: 'BYBIT app promotional video: A golden smartphone with BYBIT app icon on a dark luxury background. Golden particles and coins floating around. Text "BYBIT - Earn Money Online" appears in glowing golden Hindi font. Smooth cinematic camera movement showing the app interface with money earning features. Professional tech advertisement style, elegant and premium feel.',
       },
     ];
 

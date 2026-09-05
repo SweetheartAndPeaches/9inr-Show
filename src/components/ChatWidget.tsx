@@ -12,7 +12,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'สวัสดี! 🙏 ฉันชื่อ Somchai ผู้เชี่ยวชาญการตลาดของ Goodpay\n\nคุณต้องการข้อมูลเกี่ยวกับอะไร? ฉันจะตอบเป็นภาษาของคุณ! 😊'
+      content: 'สวัสดี! 🙏 ฉันชื่อ Somchai ผู้เชี่ยวชาญการตลาดของ BYBIT\n\nคุณต้องการข้อมูลเกี่ยวกับอะไร? ฉันจะตอบเป็นภาษาของคุณ! 😊'
     }
   ]);
   const [input, setInput] = useState('');

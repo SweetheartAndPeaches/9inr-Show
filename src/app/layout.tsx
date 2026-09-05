@@ -10,9 +10,9 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  title: "Goodpay - ดาวน์โหลด",
+  title: "BYBIT - ดาวน์โหลด",
   description:
-    "Goodpay - แอปพลิเคชันการเงินและความบันเทิงระดับพรีเมียมของประเทศไทย มั่นคง ปลอดภัย รายได้ไม่จำกัด!",
+    "BYBIT - แอปพลิเคชันการเงินและความบันเทิงระดับพรีเมียมของประเทศไทย มั่นคง ปลอดภัย รายได้ไม่จำกัด!",
   icons: {
     icon: "/app-icon.png",
     shortcut: "/app-icon.png",
