@@ -66,7 +66,7 @@ export default function Home() {
     setDownloadCount(prev => prev + 1);
     
     // 打开APK下载链接
-    window.open('https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/9inr.apk', '_blank');
+    window.open('https://d1lpd5tr8ui3gv.cloudfront.net/web/9inr/Goodpay.apk', '_blank');
   };
 
   const calculateEarnings = () => {
